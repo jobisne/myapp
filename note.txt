@@ -1,1 +1,2 @@
+sequelizerc is used to configure sequelize-cli
 sequelize db:migrate = use to create a table

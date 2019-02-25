@@ -23,7 +23,7 @@ fs
   .forEach(file => {
     const model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
-  });
+  });//sequelize go over each modelto generate method so they canaccess thos table
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
