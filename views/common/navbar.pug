@@ -9,3 +9,14 @@ mixin navbar()
                   a.nav-link(href="/") Home
               li.nav-item
                   a.nav-link(href="/leads") Leads
+                    .navbar-right
+                        if user
+                            span.navbar-text hello #{user.email}!
+                    .navbar-right
+                        ul.navbar-nav.mr-auto
+                            li.nav-item
+                                a.nav-link(href="/signup") Sign up
+                            li.nav-item
+                                a(href="/login") Login
+                            li.navbar-item
+                    

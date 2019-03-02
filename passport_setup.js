@@ -1,4 +1,5 @@
-let LocalStrategy = require('passport-local').Strategy
+let LocalStrategy = require('passport-local').Strategy;
+let flash = require('connect-flash');
  
 let bcrypt = require('bcrypt');
 let models = require('./models');
@@ -15,11 +16,11 @@ module.exports = function(passport) {
     passport.deserializeUser(function(id, done) {
         models.User.findOne({
             where : {
-                id: id
+                'id': id
             }
         }).then(user => {
             if (user == null) {
-                done(new Error('wrong user.id'))
+                done(new Error('wrong user id.'))
             }
             done(null, user)
         })
@@ -27,11 +28,11 @@ module.exports = function(passport) {
     passport.use(new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password',
-        passReqToCallback: true
+        passReqToCallback : true
     },
      function(req, email, password, done) {
          return models.User.findOne({
-             where: {
+             where: { 
                  'email' : email
              },
          }).then(user => {

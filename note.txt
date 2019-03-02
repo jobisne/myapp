@@ -1,2 +1,12 @@
 sequelizerc is used to configure sequelize-cli
 sequelize db:migrate = use to create a table
+serializeuser determine which object to be save to session
+desrializeuser will retrieved the object that handle by serializeuser
+local strategy willcall it authentication function when form is submitted by the post req
+and it need to know which field contain the username and password
+local strategy is for authentication when the  form is submitted
+
+passport.serializeuser save the user+id to session
+passport.desrializeuser use the handle to get tha actuall data from database
+
+git commit -a will include all the file that have been modified
