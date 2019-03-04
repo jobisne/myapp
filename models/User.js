@@ -20,12 +20,16 @@ module.exports = (sequelize, DataTypes) => {
             type:DataTypes.STRING,
             allowNull: true
         },
+        is_admin: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        },
         email: {
             type:DataTypes.STRING,
             allowNull: false,
             unique: true
         },
-
+     
     })
     return User;
 }
